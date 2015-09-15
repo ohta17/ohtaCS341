@@ -1,0 +1,6 @@
+{
+	"name": "ohta17"
+	"description": "app.json file",
+	"repository": "https://github.com/ohta17/the-simplest",
+	"keywords": ["node", "express", "static"]
+}
