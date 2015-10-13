@@ -10,12 +10,17 @@
  *                                                                                                                 
  */
 
+// Extend namespace
+var librs = librs || {};
+librs.utility = {};
+
+librs.utility = function() {
 
 // hasClass
 //
 // Given an element and a className, return true if the element has
 // the class className.
-var hasClass = function(element, className) {
+librs.utility.hasClass = function(element, className) {
 
     return element.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(element.className);
 };
@@ -24,7 +29,7 @@ var hasClass = function(element, className) {
 //
 // Given an element and a classToAdd, add the class to the element
 // if it doesn't already have it.
-var addClass = function(element, classToAdd) {
+librs.utility.addClass = function(element, classToAdd) {
 
     var currentClassValue = element.className;
 
@@ -41,7 +46,7 @@ var addClass = function(element, classToAdd) {
 //
 // Given an element and a classToRemove, remove the class
 // from the element if it is present.
-var removeClass = function(element, classToRemove) {
+librs.utility.removeClass = function(element, classToRemove) {
     var currentClassValue = element.className;
     
     // removing a class value when there is more than one class
@@ -65,4 +70,8 @@ var removeClass = function(element, classToRemove) {
 	element.className = element.className.replace(classToRemove, "");
 	return;
     }
-};
+}; 
+}; // end module
+
+// Invoke module.
+librs.utility();

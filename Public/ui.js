@@ -5,6 +5,12 @@
  * 
  */
 
+var librs = librs || {};
+
+librs.ui = {};
+
+librs.ui = function() {
+
 var counter = 1;
 
 var toggle = function() {
@@ -15,14 +21,14 @@ var toggle = function() {
     var el = document.getElementById('about');
 
     // Add the class “show” to the element.
-    addClass(el, 'show');
+    librs.utility.addClass(el, 'show');
 
 	if (counter == 1) {
-		removeClass(el, 'show');
+		librs.utility.removeClass(el, 'show');
 		counter = counter - 1;
 	}
 	else {
-		addClass(el,'show');
+		librs.utility.addClass(el,'show');
 		counter = counter + 1;
 	}
     // Remove the class "show"
@@ -47,3 +53,10 @@ var initialize = function() {
 // the js is loaded after the DOM is loaded.  It is a                                                                              
 // good time to initialize the UI elements in the page.                                                                            
 initialize();
+
+}; // end module
+
+//Invoke module.  After invocation, the module's code is now added to
+//the namespace and is accessible through the librs object.
+
+librs.ui();
